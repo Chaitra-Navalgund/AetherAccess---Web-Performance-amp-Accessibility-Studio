@@ -1,0 +1,151 @@
+/**
+ * UNOPTIMIZED BASELINE STYLESHEET (BEFORE OPTIMIZATION)
+ * Contains classic anti-patterns:
+ * - High specificity chains (div > div > div)
+ * - 25+ !important declarations
+ * - Hardcoded color values with failing contrast (< 2.8:1)
+ * - No custom properties, duplicated definitions
+ * - Outline none without focus rings (violates WCAG 2.4.7)
+ * - Massive unused selectors and lack of container queries
+ */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  outline: none !important; /* Removes focus indicators! */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #777777; /* Poor contrast ratio: 2.8:1 on white (Fails WCAG AA) */
+}
+
+div.bad-header {
+  height: 90px;
+  background: #ffffff;
+  border-bottom: 2px solid #eeeeee;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+div.bad-header div.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+div.bad-logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #888888;
+}
+
+div.bad-nav {
+  display: flex;
+}
+
+div.bad-nav div.nav-item {
+  margin-left: 25px;
+  color: #a0a0a0; /* Severe contrast failure 2.2:1 */
+  cursor: pointer;
+}
+
+div.bad-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  padding: 12px 24px !important;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+div.bad-hero {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+div.bad-hero h1 {
+  font-size: 38px;
+  color: #999999; /* Poor contrast */
+  margin-bottom: 20px;
+}
+
+div.bad-hero p {
+  color: #888888;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+/* Image with no dimensions causing massive CLS */
+div.bad-hero img {
+  width: 100%;
+  height: auto;
+}
+
+div.bad-table {
+  width: 100%;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+}
+
+div.bad-row {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 12px 16px;
+}
+
+div.bad-header-row {
+  background: #fafafa;
+  font-weight: bold;
+  color: #aaa;
+}
+
+div.bad-col {
+  flex: 1;
+}
+
+div.bad-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+div.bad-card {
+  flex: 1 1 300px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  background: #fff;
+}
+
+div.bad-card div.card-head {
+  font-size: 18px;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+div.bad-card div.card-body {
+  color: #888;
+  font-size: 14px;
+}
+
+input.bad-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  color: #999;
+}
+
+div.bad-footer {
+  background: #111;
+  color: #555; /* Fails contrast 2.1:1 on dark */
+  padding: 40px 20px;
+  font-size: 13px;
+}

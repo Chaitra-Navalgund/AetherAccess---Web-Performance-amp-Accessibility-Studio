@@ -1,0 +1,6 @@
+{
+  "name": "AetherAccess - Web Performance & Accessibility Studio",
+  "description": "Production-grade performance optimization and WCAG 2.2 accessibility engineering suite with semantic HTML5, optimized CSS, audits, and technical report.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

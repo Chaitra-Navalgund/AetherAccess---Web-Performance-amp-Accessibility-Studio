@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clinic Portal</title>
+  <!-- Missing meta viewport, missing description, missing lang attribute -->
+  <link rel="stylesheet" href="/unoptimized.css">
+</head>
+<body>
+  <!-- Missing skip to content link -->
+
+  <!-- Header created using nested divs without landmark roles -->
+  <div class="bad-header">
+    <div class="inner">
+      <div class="bad-logo">CivicHealth</div>
+      <!-- Unsemantic div navigation without role or keyboard navigation -->
+      <div class="bad-nav">
+        <div class="nav-item">Services</div>
+        <div class="nav-item">Clinics</div>
+        <div class="nav-item">Schedules</div>
+        <div class="nav-item">Contact</div>
+      </div>
+      <!-- Clickable div instead of button (no keyboard Enter/Space, no focus ring) -->
+      <div class="bad-btn" onclick="alert('Book appointment');">Book Now</div>
+    </div>
+  </div>
+
+  <!-- Hero with div soup, missing alt on image, no dimensions (CLS disaster) -->
+  <div class="bad-hero">
+    <h1>Community Clinic Portal</h1>
+    <p>We provide general community health, checkups and appointments.</p>
+    <div class="bad-btn" onclick="alert('Find clinic');">Find A Clinic</div>
+    <div style="margin-top: 20px;">
+      <!-- Missing alt attribute, no width/height, causes massive CLS -->
+      <img src="/images/hero_community_health.jpg">
+    </div>
+  </div>
+
+  <!-- Unsemantic table made of nested divs (screen readers cannot announce rows, columns or scope) -->
+  <div style="padding: 20px;">
+    <h2>Clinic Schedules</h2>
+    <div class="bad-table">
+      <div class="bad-row bad-header-row">
+        <div class="bad-col">Location</div>
+        <div class="bad-col">Hours</div>
+        <div class="bad-col">Wait Time</div>
+      </div>
+      <div class="bad-row">
+        <div class="bad-col">Downtown Center</div>
+        <div class="bad-col">8am - 8pm</div>
+        <div class="bad-col">12 mins</div>
+      </div>
+      <div class="bad-row">
+        <div class="bad-col">Westside Center</div>
+        <div class="bad-col">8:30am - 5:30pm</div>
+        <div class="bad-col">18 mins</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form with inputs lacking labels (only placeholder text, violates WCAG 3.3.2) -->
+  <div style="padding: 20px; background: #fafafa;">
+    <h2>Quick Contact</h2>
+    <!-- No label elements, only placeholder -->
+    <input type="text" class="bad-input" placeholder="Your name...">
+    <input type="text" class="bad-input" placeholder="Your email...">
+    <div class="bad-btn" onclick="alert('Submitted');">Submit</div>
+  </div>
+
+  <!-- Footer without semantic address or landmark -->
+  <div class="bad-footer">
+    CivicHealth 2026. All rights reserved. 450 Access Blvd.
+  </div>
+</body>
+</html>
